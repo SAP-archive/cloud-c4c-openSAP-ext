@@ -1,7 +1,7 @@
 # OpenSAP course sample material
 # Extending SAP Products with SAP HANA Cloud Platform
 User=<Your SAP ID user> 
-Description=SAP C4C OData API access
+Description=SAP C4C Custom OData services API access
 Type=HTTP
 TrustAll=true
 Authentication=BasicAuthentication
