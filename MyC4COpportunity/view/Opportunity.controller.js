@@ -1,13 +1,16 @@
 sap.ui.controller("view.Opportunity", {
+	
+	oDataServiceURL: "c4codata",
 
 	/**
 	 * Called when a controller is instantiated and its View controls (if available) are already created.
 	 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 	 * @memberOf view.Opportunity
 	 */
-	//	onInit: function() {
-	//
-	//	},
+		onInit: function() {
+			this.oDataModel = new sap.ui.model.odata.ODataModel( this.oDataServiceURL );
+			this.getView().setModel(this.oDataModel);
+		}
 
 	/**
 	 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
