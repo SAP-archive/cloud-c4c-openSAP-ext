@@ -1,0 +1,32 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "saml",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+    	"path": "/c4codata",
+    	"target": {
+    		"type": "destination",
+    		"name": "sap_cloud4customer_core_odata"
+    	},
+    	"description": "C4C Core OData Services"
+    }
+  ]
+}
