@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" controllerName="myopportunity.opportunity" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Opportunities">
+		<content>
+			<Table id="idOpportunityTable"
+			    inset="false"
+			    items="{/results}">
+			    <headerToolbar>
+			      <Toolbar>
+			        <Title text="Opportunities" level="H2"/>
+			      </Toolbar>
+			    </headerToolbar>
+			    <columns>
+			      <Column>
+			        <Text text="Opportunity" />
+			      </Column>
+			      <Column>
+			        <Text text="Account" />
+			      </Column>
+			      <Column
+			        hAlign="Right">
+			        <Text text="Expected Value" />
+			      </Column>
+			      <Column
+			        hAlign="Right">
+			        <Text text="Probability" />
+			      </Column>
+			    </columns>
+			    <items>
+			      <ColumnListItem>
+			        <cells>
+			          <ObjectIdentifier
+			            title="{Name/content}"
+			            text="{OpportunityID}"/>
+			          <Text
+			            text="{AccountName/content}" />
+			          <ObjectNumber
+				          number="{ExpectedValue/content}"
+				          unit="{ExpectedValue/currencyCode}" />
+				      <ObjectNumber
+				          number="{ProbabilityPercent}"
+				          unit="%" />
+			        </cells>
+			      </ColumnListItem>
+			    </items>
+			  </Table>
+		</content>
+	</Page>
+</core:View>

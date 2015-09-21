@@ -1,0 +1,7 @@
+<Module>
+	<ModulePrefs description="MyC4COpportunity" title="MyC4COpportunity">
+		<Require feature="opensocial-0.9"/>
+	</ModulePrefs>
+	<!-- ModuleConfig AllowedHeaders="DemoHeader1,DemoHeader2" /-->
+	<Content href="index.html" type="html" view="default, authoring, consumption, mobile, preview"></Content>
+</Module>
