@@ -1,6 +1,6 @@
 <core:View xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns="sap.m" controllerName="view.opportunity" 
+	xmlns="sap.m" controllerName="view.Opportunity" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Opportunities">
 		<content>
