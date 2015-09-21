@@ -21,12 +21,23 @@
       "description": "SAPUI5 Test Resources"
     },
     {
-    	"path": "/c4codata",
-    	"target": {
-    		"type": "destination",
-    		"name": "sap_cloud4customer_core_odata"
-    	},
-    	"description": "C4C Core OData Services"
+      "path": "/c4codata",
+      "target": {
+        "type": "destination",
+        "name": "sap_cloud4customer_core_odata"
+      },
+      "description": "C4C Core OData Services"
+    }
+  ],
+  "cacheControl": [
+    {
+      "directive": "private",
+      "maxAge": 0,
+      "path": "*html"
+    },
+    {
+      "directive": "public",
+      "maxAge": 31536000
     }
   ]
 }
