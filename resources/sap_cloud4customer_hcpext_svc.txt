@@ -1,0 +1,8 @@
+# OpenSAP course sample material
+# Extending SAP Products with SAP HANA Cloud Platform
+Name=sap_cloud4customer_hcpext_svc
+URL=https\://<YourRiskOpportunitiesJavaAppURL>.hanatrial.ondemand.com/C4CExt.Svc
+ProxyType=Internet
+Type=HTTP
+CloudConnectorVersion=2
+Authentication=AppToAppSSO
