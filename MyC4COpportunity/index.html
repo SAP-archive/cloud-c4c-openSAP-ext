@@ -16,8 +16,13 @@
 		<script>
 				sap.ui.localResources("view");
 				var app = new sap.m.App({initialPage:"idOpportunity"});
-				var page = sap.ui.view({id:"idOpportunity", viewName:"view.Opportunity", type:sap.ui.core.mvc.ViewType.XML});
+				var page = sap.ui.view({
+									 	 id:"idOpportunity", 
+										 type: sap.ui.core.mvc.ViewType.XML, 
+										 viewName: "view.Opportunity"
+										});
 				app.addPage(page);
+				sap.m.Shell({app:app, showLogout:false})
 				app.placeAt("content");
 		</script>
 	</head>
@@ -25,7 +30,3 @@
 		<div id="content"></div>
 	</body>
 </html>
-	
-
-
-

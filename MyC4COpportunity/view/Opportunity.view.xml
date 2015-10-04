@@ -1,51 +1,67 @@
-<core:View xmlns:core="sap.ui.core" 
-	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns="sap.m" controllerName="view.Opportunity" 
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Opportunities">
+<mvc:View
+	controllerName="view.Opportunity"
+	xmlns:core="sap.ui.core"
+	xmlns:c="sap.ui.commons"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:t="sap.ui.table"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Page showNavButton="false"
+		  showHeader="false"
+		  enableScrolling="true"
+		  class="sapUiResponsiveContentPadding">
 		<content>
-			<Table id="idOpportunityTable"
-			    inset="false"
-			    items="{/OpportunityCollection}">
-			    <headerToolbar>
-			      <Toolbar>
-			        <Title text="Opportunities" level="H2"/>
-			      </Toolbar>
-			    </headerToolbar>
-			    <columns>
-			      <Column>
-			        <Text text="Opportunity" />
-			      </Column>
-			      <Column>
-			        <Text text="Account" />
-			      </Column>
-			      <Column
-			        hAlign="Right">
-			        <Text text="Expected Value" />
-			      </Column>
-			      <Column
-			        hAlign="Right">
-			        <Text text="Probability" />
-			      </Column>
-			    </columns>
-			    <items>
-			      <ColumnListItem>
-			        <cells>
-			          <ObjectIdentifier
-			            title="{Name/content}"
-			            text="{OpportunityID}"/>
-			          <Text
-			            text="{AccountName/content}" />
-			          <ObjectNumber
-				          number="{ExpectedValue/content}"
-				          unit="{ExpectedValue/currencyCode}" />
-				      <ObjectNumber
-				          number="{ProbabilityPercent}"
-				          unit="%" />
-			        </cells>
-			      </ColumnListItem>
-			    </items>
-			  </Table>
+			<t:Table id="opportunitiesList"
+				rows="{
+					path: '/OpportunityCollection'
+				}"
+				selectionBehavior="RowOnly"
+				rowSelectionChange="onListItemPress"
+				title="Opportunities"
+				visibleRowCount="7"
+				navigationMode="Paginator">
+				<t:columns>
+					<t:Column>
+						<Label text="ID"/>
+						<t:template>
+							<c:TextView text="{OpportunityID}" />
+						</t:template>
+					</t:Column>
+					<t:Column>
+						<Label text="Name"/>
+						<t:template>
+							<c:TextView text="{Name/content}" />
+						</t:template>
+					</t:Column>					
+					<t:Column>
+						<Label text="Account"/>
+						<t:template>
+							<c:TextView text="{AccountName/content}" />
+						</t:template>
+					</t:Column>
+					<t:Column>
+						<Label text="Probability"/>
+						<t:template>
+							<c:TextView text="{ProbabilityPercent} %" />
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<f:SimpleForm id="opportunityDetails" editable="false"
+						  title="Opportunity Details" class="sapUiSmallMarginTop">
+				<f:content>
+					<c:Label text="ID" />
+					<c:TextView text="{OpportunityID}" />
+					<c:Label text="Name" />
+					<c:TextView text="{Name/content}" />
+					<c:Label text="Account" />
+					<c:TextView text="{AccountName/content}" />
+					<c:Label text="Probability" />
+					<c:TextView text="{ProbabilityPercent}" />
+					<c:Label text="Risk" />
+					<c:TextView id="riskAssessmentTextField" text="{riskModel>/RiskAssessment}" />
+				</f:content>
+			</f:SimpleForm>
 		</content>
-	</Page>
-</core:View>
+	</Page> 
+</mvc:View>
