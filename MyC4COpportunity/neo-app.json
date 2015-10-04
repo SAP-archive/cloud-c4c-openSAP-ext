@@ -21,12 +21,20 @@
       "description": "SAPUI5 Test Resources"
     },
     {
-      "path": "/c4codata",
+      "path": "/destinations/c4codata",
       "target": {
         "type": "destination",
         "name": "sap_cloud4customer_core_odata"
       },
       "description": "C4C Core OData Services"
+    },
+    {
+      "path": "/destinations/c4cext.svc",
+      "target": {
+        "type": "destination",
+        "name": "sap_cloud4customer_hcpext_svc"
+      },
+      "description": "HCP Application Service extending C4C"
     }
   ],
   "cacheControl": [
