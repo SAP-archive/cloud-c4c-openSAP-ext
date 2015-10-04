@@ -1,4 +1,4 @@
-package com.sap.samples;
+package com.sap.samples.odata;
 
 import com.sap.core.connectivity.api.authentication.AuthenticationHeader;
 
